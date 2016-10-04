@@ -34,7 +34,7 @@
                 <c:choose>
                     <c:when test="${not empty user && not empty user.id}">
                         <form:input required="required" path="email" type="email" id="email" maxlength="50"
-                                    placeholder='${email}' disabled="true"/>
+                                    placeholder='${email}' readonly="true"/>
                     </c:when>
                     <c:otherwise>
                         <form:input required="required" path="email" type="email" id="email" maxlength="50"

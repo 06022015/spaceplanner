@@ -83,10 +83,19 @@ public class UserBLImpl extends BaseBL implements UserBL, UserDetailsService, Co
             return userEntity;
         }
         SpacePlannerUtil.processRole(userEntity);
-        userEntity.setUsername(userEntity.getEmail());
-        userEntity.setPassword(passwordEncoder.encodePassword(userEntity.getPassword(), null));
         try {
-            userDao.saveUser(userEntity);
+            if(null != userEntity.getId()){
+                UserEntity user = userDao.getUser(userEntity.getId());
+                user.setFirstName(userEntity.getFirstName());
+                user.setLastName(userEntity.getLastName());
+                user.setMobile(userEntity.getMobile());
+                user.setRoles(userEntity.getRoles());
+                userDao.save(user);
+            }else{
+                userEntity.setUsername(userEntity.getEmail());
+                userEntity.setPassword(passwordEncoder.encodePassword(userEntity.getPassword(), null));
+                userDao.saveUser(userEntity);
+            }
             saveSuccessMessage(status, commonUtil.getText("success.save", status.getLocale()));
         } catch (DuplicateObjectException e) {
             userEntity.setPassword(userEntity.getConfirmPassword());

@@ -67,7 +67,7 @@ public class UserController extends BaseController {
         return sendRedirect("/user/show.html");
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String deleteUser(HttpServletRequest request) {
         Long id = Long.parseLong(request.getParameter("id"));
         userBL.delete(id);

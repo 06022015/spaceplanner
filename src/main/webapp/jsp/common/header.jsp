@@ -4,12 +4,13 @@
             <div style="width: 100%;">
                 <div id="logedin_detail" style="float: right;">
                     <security:authorize access="isAuthenticated()">
-                        <div class="login_detail" style="display: block;font-size: 12px;padding: 5px;">Welcome: ${sessionScope.fullName}</div>
+                        <div class="login_detail" style="display: block;font-size: 12px;padding: 5px;color: #FFFFFF">Welcome: ${sessionScope.fullName}</div>
                     </security:authorize>
                 </div>
                 <div id="custom_logo">
                     <%--<marquee scrollamount="2" behavior="alternate">Space Data Base Solution</marquee>--%>
-                    Space Data Base Solution
+                    <a href="<c:url value="/comm/home.html"/>">Space Data Base Solution</a>
+
                 </div>
             </div>
             <div id="nav">

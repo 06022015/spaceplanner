@@ -37,7 +37,7 @@
     </div>
 </div>
 <footer>
-    <p>Copy right @2015</p>
+    <%--<p>Copy right @2015</p>--%>
 </footer>
 <div style="display: none;">
     <div id="dialog-confirm" title="Confirm">

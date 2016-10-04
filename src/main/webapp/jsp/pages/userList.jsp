@@ -26,7 +26,7 @@
                     <tr>
                         <td>${cnt.count}</td>
                         <td>
-                            <a href="<c:url value="/user/form.html?id=${user.id}"/>">${user.firstName}&nbsp; ${user.lastName}</a>
+                            <a class="action_property" href="<c:url value="/user/form.html?id=${user.id}"/>">${user.firstName}&nbsp; ${user.lastName}</a>
                         </td>
                         <td>${user.username}</td>
                         <td>${user.mobile}</td>

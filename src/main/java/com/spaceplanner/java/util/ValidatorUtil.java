@@ -39,14 +39,14 @@ public class ValidatorUtil implements Constants {
             status.addError(commonUtil.getText("error.email.required", status.getLocale()));
         else if (!isValidEmail(userEntity.getEmail()))
             status.addError(commonUtil.getText("error.email.invalid", status.getLocale()));
-
-        if (isNullOrEmpty(userEntity.getPassword()))
-            status.addError(commonUtil.getText("error.password.required", status.getLocale()));
-        else if (!userEntity.getPassword().equals(userEntity.getConfirmPassword()))
-            status.addError(commonUtil.getText("error.password.and.confirm.password.mismatch", status.getLocale()));
-        else if (!isValidPassword(userEntity.getPassword()))
-            status.addError(commonUtil.getText("error.password.invalid", status.getLocale()));
-
+        if(null== userEntity.getId()){
+            if (isNullOrEmpty(userEntity.getPassword()))
+                status.addError(commonUtil.getText("error.password.required", status.getLocale()));
+            else if (!userEntity.getPassword().equals(userEntity.getConfirmPassword()))
+                status.addError(commonUtil.getText("error.password.and.confirm.password.mismatch", status.getLocale()));
+            else if (!isValidPassword(userEntity.getPassword()))
+                status.addError(commonUtil.getText("error.password.invalid", status.getLocale()));
+        }
         if (isNullOrEmpty(userEntity.getFirstName()))
             status.addError(commonUtil.getText("error.first.name.required", status.getLocale()));
         else if (!isValidLength(userEntity.getFirstName(), NORMAL_TEXT_FIELD_LENGTH))

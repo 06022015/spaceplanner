@@ -555,9 +555,12 @@ table td, table th{
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));*/
 }
 
-#custom_logo{
-    /*color: #d6d6d6;*/
+#custom_logo, #custom_logo a{
     color: #fdfdfd;
+}
+
+#custom_logo {
+    /*color: #d6d6d6;*/
     font-size: 25px!important;
     /*font-style: italic;*/
     font-weight: bold;
@@ -569,7 +572,7 @@ table td, table th{
     /*float: left;*/
 }
 
-#custom_logo:hover{
+#custom_logo:hover, #custom_logo a:hover{
     /*color: #fdfdfd;*/
     color: #d6d6d6;
 }

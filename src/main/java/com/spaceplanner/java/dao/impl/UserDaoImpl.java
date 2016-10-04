@@ -30,7 +30,8 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 
     @Override
     public List<UserEntity> getUser() {
-        Criteria criteria = getCurrentSession().createCriteria(UserEntity.class);
+        Criteria criteria = getCurrentSession().createCriteria(UserEntity.class)
+                .add(Restrictions.eq("enabled", true));
         return criteria.list();
     }
 
